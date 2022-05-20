@@ -56,7 +56,20 @@
 				</div>
 			</a>
 
-			
+			<a href="/portfolio">
+				<div
+					class={`text-center ${
+						$selectedPage === 'vault' ? ' text-[#8387B0] ' : ' font-semibold text-[#5A40FF] '
+					} `}
+					on:click={() => {
+						if ($selectedPage !== 'portfolio') {
+							selectedPage.set('portfolio');
+						}
+					}}
+				>
+					Airdrop
+				</div>
+			</a>
 
 			
 		</div>
