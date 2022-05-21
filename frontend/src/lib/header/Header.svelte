@@ -44,7 +44,7 @@
 			<a href="/portfolio">
 				<div
 					class={`text-center ${
-						$selectedPage === 'vault' ? ' text-[#8387B0] ' : ' font-semibold text-[#5A40FF] '
+						$selectedPage === 'portfolio' ? ' font-semibold text-[#5A40FF] ' : ' text-[#8387B0] '
 					} `}
 					on:click={() => {
 						if ($selectedPage !== 'portfolio') {
@@ -56,14 +56,14 @@
 				</div>
 			</a>
 
-			<a href="/portfolio">
+			<a href="/airdrop">
 				<div
 					class={`text-center ${
-						$selectedPage === 'vault' ? ' text-[#8387B0] ' : ' font-semibold text-[#5A40FF] '
+						$selectedPage === 'airdrop' ? ' font-semibold text-[#5A40FF] ' : ' text-[#8387B0] '
 					} `}
 					on:click={() => {
-						if ($selectedPage !== 'portfolio') {
-							selectedPage.set('portfolio');
+						if ($selectedPage !== 'airdrop') {
+							selectedPage.set('airdrop');
 						}
 					}}
 				>

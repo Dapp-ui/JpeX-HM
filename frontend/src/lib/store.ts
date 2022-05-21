@@ -127,3 +127,6 @@ export const selectedNftCollection = writable('Bayc')
 
 export const rinkeByBaseUrl = writable("https://rinkeby.etherscan.io/tx/")
 
+
+
+export const showProcessingForClaimingNFT = writable(false)
