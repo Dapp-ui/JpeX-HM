@@ -1,6 +1,7 @@
 import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
-// import WalletConnectProvider from "@walletconnect/web3-provider";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 import { get } from 'svelte/store';
 import { getNumBackInUnits } from '$lib/utils/units';
 
@@ -70,15 +71,21 @@ export async function onStartup() {
 		// @ts-ignore
 		
 		// @ts-ignore
-		let WalletConnectProvider = window.WalletConnectProvider.default;
+		let WalletConnectProvider = window.WalletConnectProvider;
+		console.log("WalletConnectProvider", WalletConnectProvider);
 		const providerOptions = {
+			walletlink: {
+				package: CoinbaseWalletSDK, // Required
+				options: {
+				  appName: "Web 3 Modal Demo", // Required
+				  infuraId: "eaHOIpmkv7RpL3B9Ujk4Pf9ZzxHlUcQi" // Required unless you provide a JSON RPC url; see `rpc` below
+				}
+			  },
 			walletconnect: {
 				// @ts-ignore
 				package: WalletConnectProvider, // required
 				options: {
-					rpc: {
-						4: 'https://eth-rinkeby.alchemyapi.io/v2/eaHOIpmkv7RpL3B9Ujk4Pf9ZzxHlUcQi'
-					}
+					infuraId: "eaHOIpmkv7RpL3B9Ujk4Pf9ZzxHlUcQi" // Required unless you provide a JSON RPC url; see `rpc` below
 				}
 			}
 		};
