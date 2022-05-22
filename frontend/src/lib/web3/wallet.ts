@@ -5,6 +5,9 @@ import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 import { get } from 'svelte/store';
 import { getNumBackInUnits } from '$lib/utils/units';
 
+import * as UAuthWeb3Modal from '@uauth/web3modal'
+import UAuthSPA from '@uauth/js'
+
 import {
 	ethersProvider,
 	address,
@@ -17,6 +20,7 @@ import {
 } from '$lib/store';
 import networkConfig from '$lib/constants/networkConfig';
 import { getBalances } from './balances';
+import { uauthOptions } from './uOathOptions';
 
 async function setAccount(provider) {
 	if (!provider.isMetaMask) {
@@ -66,12 +70,12 @@ async function setAccount(provider) {
 }
 
 export async function onStartup() {
+	
+	
 	// @ts-ignore
+
+
 	if (window && window.WalletConnectProvider) {
-		// @ts-ignore
-		
-		// @ts-ignore
-		let WalletConnectProvider = window.WalletConnectProvider;
 		console.log("WalletConnectProvider", WalletConnectProvider);
 		const providerOptions = {
 			walletlink: {
@@ -80,6 +84,19 @@ export async function onStartup() {
 				  appName: "Web 3 Modal Demo", // Required
 				  infuraId: "eaHOIpmkv7RpL3B9Ujk4Pf9ZzxHlUcQi" // Required unless you provide a JSON RPC url; see `rpc` below
 				}
+			  },
+			  'custom-uauth': {
+				// The UI Assets
+				display: UAuthWeb3Modal.display,
+			
+				// The Connector
+				connector: UAuthWeb3Modal.connector,
+			
+				// The SPA libary
+				package: UAuthSPA,
+			
+				// The SPA libary options
+				options: uauthOptions,
 			  },
 			walletconnect: {
 				// @ts-ignore

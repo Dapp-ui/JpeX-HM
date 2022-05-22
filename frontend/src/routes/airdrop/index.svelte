@@ -1,5 +1,6 @@
 <script lang="ts">
-import { showProcessingForClaimingNFT } from "$lib/store";
+import Header from "$lib/header/Header.svelte";
+import { showProcessingForClaimingNFT, worldIdVerified } from "$lib/store";
 
   import worldID from "@worldcoin/id";
   import { afterUpdate, onMount } from "svelte";
@@ -8,6 +9,8 @@ import { showProcessingForClaimingNFT } from "$lib/store";
     try {
       const result = await worldID.enable();
 
+      
+    worldIdVerified.set(true)
       console.log("World ID verified successfully: ", result);
     } catch (error) {
       console.log("ERRORRRR");
@@ -31,7 +34,8 @@ import { showProcessingForClaimingNFT } from "$lib/store";
   });
 </script>
 
-<div class=" flex gap-3 h-screen flex-col items-center font-poppins mt-28">
+<Header />
+<div class=" flex gap-3 flex-col items-center font-poppins mt-28">
   <div class=" font-[800] text-[40px]">Get <span class=" text-pink-400">20% OFF</span> on trading fees</div>
   <div class=" font-bold text-[30px]">Early bird NFT</div>
   <div id="world-id-container" />

@@ -1,5 +1,5 @@
 
-const base = "https://jpex-backend.onrender.com"
+const base = "http://localhost:3500"
 export function api(method: string, resource: string, data?: Record<string, unknown>) {
 	return fetch(`${base}/${resource}`, {
 		method,

@@ -90,9 +90,9 @@ export const displayLongPositions = writable(true)
 export const longPositions = writable(undefined)
 export const shortPositions = writable(undefined)
 
-export const currentEpoch = writable(2)
+export const currentEpoch = writable(4)
 
-export const epochExpiry = writable('150522')
+export const epochExpiry = writable('300522')
 
 export const oraclePrice = writable('110')
 
@@ -130,3 +130,4 @@ export const rinkeByBaseUrl = writable("https://rinkeby.etherscan.io/tx/")
 
 
 export const showProcessingForClaimingNFT = writable(false)
+export const worldIdVerified = writable(false)

@@ -193,7 +193,7 @@
 							<!-- Card copy -->
 							<div class="p-2 grid grid-cols-1 gap-2">
 								<p class=" font-poppins font-[600] text-[27px] tracking-[0.01em] ">
-									Bayc-Call-150422
+									Bayc-Call-300522
 								</p>
 
 								<!-- NFT List -->

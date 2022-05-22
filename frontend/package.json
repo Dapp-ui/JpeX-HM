@@ -13,10 +13,14 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
+    "@coinbase/wallet-sdk": "^3.1.0",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-netlify": "^1.0.0-next.45",
     "@sveltejs/kit": "next",
     "@types/cookie": "^0.4.1",
+    "@uauth/js": "^1.1.0",
+    "@uauth/web3modal": "^1.1.0",
+    "@walletconnect/web3-provider": "^1.7.8",
     "autoprefixer": "^10.4.2",
     "ethers-multicall": "^0.2.3",
     "flowbite": "^1.4.2",
@@ -41,7 +45,9 @@
     "cookie": "^0.4.1",
     "ethers": "^5.5.4",
     "express": "^4.18.1",
+    "mime": "^3.0.0",
     "mongoose": "^6.3.1",
+    "nft.storage": "^6.3.0",
     "svelte-copy-to-clipboard": "^0.2.5",
     "svelte-i18n": "^3.3.13",
     "web3modal": "^1.9.5"
